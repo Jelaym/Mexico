@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> La Revolución Mexicana </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='css/estilos.css'>
+        <link rel="stylesheet" href="css/estilos3.css" type="text/css">
+        
+        <style type="text/css">
+            
+            .avanzar {
+                border-radius: 10px;
+                background-color: goldenrod;
+                color: white;
+                width: 100%;
+                height: 100%;
+                font-size: 20px;
+            }
+            .animation{
+               animation-name: colorc;
+               animation-duration: 10s;
+               animation-iteration-count: infinite;
+            }
+            .botonL{
+                font-size: 20px;
+                background-color: transparent;
+                position: absolute; 
+                border: none;
+                outline: none;
+                color: black;
+            }
+            @keyframes colorc{
+                0%{ color: green;}
+                40%{color: white;}
+                80%{color: red;}
+                100%{ color: green;}
+            }
+            .Menu{
+                font-size: 20px;
+                border-radius: 10px;
+                background-color: goldenrod;
+                color: white;
+                top:95%;
+                left:85%;
+                position: fixed; 
+                
+            }
+        </style>
+        
+        <script>
+            var persona = localStorage.getItem("tipo");
+            if((persona < 1) || (persona > 2)){
+                location.replace("/MexicoInTempore/Error.html");
+            }
+        </script>
+        
+        <script>
+        function info()
+            {
+               document.getElementById("frame").style.visibility="visible"; 
+               document.getElementById("frame2").style.visibility="visible";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden"; 
+               document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";    
+           }
+           function info2()
+           {
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="visible"; 
+               document.getElementById("frame4").style.visibility="visible";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden";
+                document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";     
+           }  
+           function info3(){
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="visible";
+               document.getElementById("frame6").style.visibility="visible"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden";
+               document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";     
+           }
+           function info4(){
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="visible";  
+               document.getElementById("frame8").style.visibility="visible"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden";
+               document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";    
+           }
+           function info5(){
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="visible";  
+               document.getElementById("frame10").style.visibility="visible";
+               document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";    
+           }
+           function info6(){
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden";
+               document.getElementById("frame11").style.visibility="visible";  
+               document.getElementById("frame12").style.visibility="visible"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";    
+           }
+           function info7(){
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden";
+               document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="visible";  
+               document.getElementById("frame14").style.visibility="visible"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";    
+           }
+           function info8(){
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden";
+               document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="visible";  
+               document.getElementById("frame16").style.visibility="visible"; 
+               document.getElementById("frame17").style.visibility="hidden";  
+               document.getElementById("frame18").style.visibility="hidden";    
+           }
+           function info9(){
+               document.getElementById("frame").style.visibility="hidden"; 
+               document.getElementById("frame2").style.visibility="hidden";
+               document.getElementById("frame3").style.visibility="hidden"; 
+               document.getElementById("frame4").style.visibility="hidden";  
+               document.getElementById("frame5").style.visibility="hidden";
+               document.getElementById("frame6").style.visibility="hidden"; 
+               document.getElementById("frame7").style.visibility="hidden";  
+               document.getElementById("frame8").style.visibility="hidden"; 
+               document.getElementById("frame9").style.visibility="hidden";  
+               document.getElementById("frame10").style.visibility="hidden";
+               document.getElementById("frame11").style.visibility="hidden";  
+               document.getElementById("frame12").style.visibility="hidden"; 
+               document.getElementById("frame13").style.visibility="hidden";  
+               document.getElementById("frame14").style.visibility="hidden"; 
+               document.getElementById("frame15").style.visibility="hidden";  
+               document.getElementById("frame16").style.visibility="hidden"; 
+               document.getElementById("frame18").style.visibility="visible";  
+                 
+           }
+           
+        </script>
+    </head>
+    <body style="background-image:  url('fondo.jpg');">
+        <h1 class="animation" style="position: absolute; top: 2px; left: 40%; text-align: center"> La Revolución Mexicana </h1>
+        <div>
+            <div>
+                <img src="IMG/Mapa3.png" alt="Mapa" style="top:10%;height:88%;width: 77%;visibility: visible; position: absolute">
+            </div>
+            <div>
+            <iframe src="Revolucion/Coahuila.html" id="frame" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/IMGPlanG.html" id="frame2" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+            
+            
+            <iframe src="Revolucion/Guanajuato.html" id="frame3" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/IMGGuana.html" id="frame4" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+            
+            
+            
+            <iframe src="Revolucion/SnLuis.html" id="frame5" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/SanLuisVid.html" id="frame6" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+            
+            
+            <iframe src="Revolucion/Chihuahua.html" id="frame7" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/IMGChi.html" id="frame8" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/Durango.html" id="frame9" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/DurangoIMG.html" id="frame10" width="350" height="300" style="position: absolute; left: 53%; top: 13%; visibility: hidden">
+            </iframe>
+            
+           <iframe src="Revolucion/Zacatecas.html" id="frame11" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/Zac.html" id="frame12" width="350" height="300" style="position: absolute; left: 53%; top: 13%; visibility: hidden">
+            </iframe>
+                
+            <iframe src="Revolucion/EdoMex.html" id="frame13" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/EdoMexIMG.html" id="frame14" width="350" height="300" style="position: absolute; left: 53%; top: 13%; visibility: hidden">
+            </iframe>
+                
+           <iframe src="Revolucion/Ayala.html" id="frame15" width="350" height="300" style="position: absolute; left:0%; top: 40%; visibility: hidden">
+            </iframe> 
+            
+            <iframe src="Revolucion/VidAyala.html" id="frame16" width="350" height="300" style="position: absolute; left: 53%; top: 13%; visibility: hidden">
+            </iframe>
+               
+            <iframe src="Revolucion/Df.html" id="frame18" width="350" height="300" style="position: absolute; left: 53%; top: 13%; visibility: hidden">
+            </iframe>
+            
+             
+        </div>
+            <div class="Coahuila">
+                <div>
+                    <img src="IMG/Coahui.png" alt="Cohahuila" onclick="info();">
+                </div>
+            </div>
+            <div class="Guanajuato">
+                <div>
+                    <img src="IMG/Guanajuato.png" alt="Guanajuato" onclick="info2();">
+                </div>
+            </div>
+            
+            <div class="Sn">
+                <div >
+                    <img src="IMG/SanLuis.png" alt="San Luis Potosí" onclick="info3();">
+                </div>
+            </div>
+            <div class="Zac">
+                <div >
+                    <img src="IMG/Zacatecas.png" alt="Zacatecas" onclick="info6();">
+                </div>
+            </div>
+            <div class="EdoMex">
+                <div >
+                    <img src="IMG/EdoMex.png" alt="Estado de México" onclick="info7();">
+                </div>
+            </div>
+            <div class="Df">
+                <div >
+                    <img src="IMG/Dis.png" alt="Distrito Federal" onclick="info9();">
+                </div>
+            </div>
+            
+            <div class="Morelos">
+                <div >
+                    <img src="IMG/Morelos.png" alt="Morelos" onclick="info8();">
+                </div>
+            </div>
+              <div class="Chihuahua">
+                <div >
+                    <img src="IMG/Chihuahua.png" alt="Morelos" onclick="info4();">
+                </div>
+              </div>
+                <div class="Durango">
+                <div >
+                    <img src="IMG/Durango.png" alt="Durango" onclick="info5();">
+                </div>
+            </div>
+        </div>
+        
+        
+        <form method="post" name="formu">
+            <div style="position: absolute; top: 90%; left: 85%;" id="avanze">
+                <input type="hidden" value="3" name="epo">
+            </div>    
+        </form>
+        
+        <div>
+            <img src="IMG/Linea.png" alt ="imagen" style="position: absolute; left: 87.5%; top: 2px;">
+            <p style="position: absolute; font-weight: bold; font-size: 20px; left: 81%; top: 80px">1810-1821</p>
+            <p style="position: absolute; font-weight: bold; font-size: 20px; left: 81%; top: 205px">1858-1861</p>
+            <p style="position: absolute; font-weight: bold; font-size: 20px; left: 81%; top: 340px">1910-1920</p>
+            
+            
+            
+            
+            <input type="button" id="ind" value="Independencia" onclick="location.href = 'Mapa.html' " class="botonL" style="left: 91%; top: 93px" >
+            <input type="button" id="ref" value="Reforma" onclick="location.href = 'Mapa2.html' " class="botonL" style="left: 91%; top: 219px; color: gray;" disabled>
+            <input type="button" id="rev" value="Revolución" onclick="location.href = 'Mapa3.html' " class="botonL" style="left: 91%; top: 352px; color: gray; " disabled>
+            
+            
+            <script>
+                var epoca = localStorage.getItem("epoch");
+                var persona= localStorage.getItem("tipo");
+                
+                if(persona == 2){
+                    document.getElementById("ref").removeAttribute("disabled");
+                    document.getElementById("rev").removeAttribute("disabled");
+                    document.getElementById("ref").style.color = "black";
+                    document.getElementById("rev").style.color = "black";
+                }else{
+                    if(epoca === 1){
+                        document.getElementById("ref").removeAttribute("disabled");
+                        document.getElementById("ref").style.color = "black";
+                    }else{
+                        if(epoca === 2){
+                            document.getElementById("ref").removeAttribute("disabled");
+                            document.getElementById("rev").removeAttribute("disabled");
+                            document.getElementById("ref").style.color = "black";
+                            document.getElementById("rev").style.color = "black";
+                        }else{
+                            if(epoca === 3){
+                                document.getElementById("ref").removeAttribute("disabled");
+                                document.getElementById("rev").removeAttribute("disabled");
+                                document.getElementById("ref").style.color = "black";
+                                document.getElementById("rev").style.color = "black";
+                            }
+                        }
+                    }
+                } 
+            </script>
+        </div>
+        <input type="button" value="Volver al Menú" id="Seleccion" onclick="location.href = '/MexicoInTempore/paginaPrin/Seleccion.html' "  class="Menu" name="seleccion">
+        <script>
+            var persona= localStorage.getItem("tipo");
+            if(persona == 1){
+                document.formu.action= "/MexicoInTempore/cuestionario/quiz.jsp";
+                document.getElementById("avanze").innerHTML= '<input type="submit" value="Avanzar de epoca" class="avanzar">';
+            }else{
+                if(persona == 2){
+                    document.formu.action= "/MexicoInTempore/Mapa/envioEpo.jsp";
+                }
+            }
+        </script>
+    </body>
+</html>

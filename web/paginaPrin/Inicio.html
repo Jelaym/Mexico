@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html style="height: 100%; width: 100%; margin: 0px;" lang="es">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <style type="text/css">
+            .opc{
+                font-family: serif; 
+                background-color: transparent; 
+                border: none; 
+                height: 100%; 
+                width: 100%; 
+                outline: none; 
+                font-size: 50px; 
+                color: black;
+            }
+            p{
+               animation-name: colorc;
+               animation-duration: 10s;
+               animation-iteration-count: infinite;
+            }
+            @keyframes colorc{
+                0%{ color: green;}
+                40%{color: white;}
+                80%{color: red;}
+                100%{ color: green;}
+            }
+        </style>
+        <script>
+            var contador = 0;
+            var tim;
+            var indice = 0;
+            var Matriz = new Array();
+            Matriz[0] = "imgInicio/n.jpg";
+            Matriz[1] = "imgInicio/ba1.jpg";
+            Matriz[2] = "imgInicio/an.jpg";
+            Matriz[3] = "imgInicio/r.jpg";
+            Matriz[4] = "imgInicio/axy.jpg";
+            Matriz[5] = "imgInicio/az.jpg";
+            //funciones de los botones
+            
+            function deshabilitaRetroceso(){
+                window.location.hash="Again-No-back-button"; //chrome
+                window.onhashchange=function(){window.location.hash="Mx";};
+            }
+            //boton 1
+            function Inicio(){
+                document.getElementById('textf').style.visibility= "visible";
+                document.getElementById('b1').onclick = cambia;
+                document.getElementById('b1').value = "Ocultar";
+                document.getElementById('b2').style.visibility= "hidden";
+                document.getElementById('b3').style.visibility = "hidden";
+                    
+                document.getElementById('fuentes').style.visibility= "hidden";
+                document.getElementById('b3').onclick = Fuentes;
+            }
+            
+            function cambia(){
+                document.getElementById('textf').style.visibility= "hidden";
+                document.getElementById('b1').onclick = Inicio;
+                document.getElementById('b1').value = "Iniciar sesion";
+                document.getElementById('b2').style.visibility= "visible";
+                document.getElementById('b3').style.visibility = "visible";
+                document.getElementById('b1').style.visibility = "visible";
+            }
+            
+            //boton2
+            function CrearCuenta(){//En caso de que se cambie el nombre del proyecto, cambiar esto.
+                location.href='/MexicoInTempore/registro/registro.html';
+            }
+            
+            //boton 3
+            function Fuentes(){
+                document.getElementById('fuentes').style.visibility= "visible";
+                document.getElementById('b3').onclick = desap;
+                document.getElementById('b3').value = "Ocultar";
+                document.getElementById('b2').style.visibility= "hidden";
+                document.getElementById('b1').style.visibility = "hidden";    
+                document.getElementById('textf').style.visibility= "hidden";
+                document.getElementById('b1').onclick = Inicio;
+            }
+            
+            //boton para entrar
+            function entrar(){
+                var e = document.getElementById("correo").value;
+                var eFocus= document.getElementById("correo");
+                var v = document.getElementById("contraseña");
+                var vSinSpace= v.value.replace(/\s/g,"");
+                var arroba= 0, punto= 0, letra= 0, letraF= 0;
+                
+                if((e.length !== 0))
+                {
+                    for(var i= 0; i < e.length; i++){
+                        if(i === 0){
+                            if(e.charAt(i)==="@"){
+                                arroba--;
+                                i= e.length;
+                            }
+                        }else{
+                            if(e.charAt(i)==="@"){
+                                arroba++;
+                            }else{
+                                if(arroba === 1){
+                                    if((punto === 0) && (e.charAt(i) !== ".")){
+                                        letra++;
+                                    }else{
+                                        if((letra > 3) && (e.charAt(i) === ".")){
+                                            punto++;
+                                        }else{
+                                            if((punto === 1) && (e.charAt(i) !== ".")){
+                                                letraF++;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    if(arroba === -1){
+                        alert("El correo debe tener una letra antes de la arroba(@).");
+                    }else{
+                        if(arroba !== 1){
+                            alert("El correo debe contener una arroba(@) y solo una arroba(@).");
+                        }else{
+                            if(letra < 4){
+                                alert("El correo debe tener minimo 4 letras despues de la arroba(@) y antes del punto(.).");
+                            }else{
+                                if(punto !== 1){
+                                    alert("El correo debe contener un punto(.) y solo un punto(.) despues de la arroba(@).");
+                                }else{
+                                    if(letraF < 2){
+                                        alert("El correo debe tener despues del punto(.) minimo dos letras (.com,.mx)).");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }else{
+                    alert("Llene el campo correo");
+                }
+                //CONTRASEÑA
+                if((arroba === 1) && (letraF > 1))
+                {
+                    if(vSinSpace.length === 0)
+                    {
+                        alert("Llene el campo contraseña.");
+                        v.focus();
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }else{
+                    eFocus.focus();
+                    return false;
+                }
+            }
+            
+            function validaC(e){
+                var llave= e.keyCode || e.which;
+                if(llave === 32){
+                    return false;
+                }
+            }
+            
+            function desap(){
+                document.getElementById('fuentes').style.visibility= "hidden";
+                document.getElementById('b3').onclick = Fuentes;
+                document.getElementById('b3').value = "About Us";
+                document.getElementById('b2').style.visibility= "visible";
+                document.getElementById('b3').style.visibility = "visible";
+                document.getElementById('b1').style.visibility = "visible";
+            }
+            
+            //Fondos de pantalla cambiantes
+            tim= setInterval('imgdin()', 2000);
+            
+            
+            function imgdin(){
+                if(indice >= 5){
+                    indice = 0;
+                }
+               
+                document.getElementById('dad').src = Matriz[indice];
+                indice++;
+            }
+            
+            //Flechas cambiantes
+            function dis(a){
+                if(a === b1){
+                    document.getElementById('flecha1').style.visibility= "visible";
+                }
+                if(a === b2){
+                    document.getElementById('flecha2').style.visibility= "visible";
+                }
+                if(a === b3){
+                    document.getElementById('flecha3').style.visibility= "visible";
+                }
+            }
+            
+            function out(b){
+                if(b === b1){
+                    document.getElementById('flecha1').style.visibility= "hidden";
+                }
+                if(b === b2){
+                    document.getElementById('flecha2').style.visibility= "hidden";
+                }
+                if(b === b3){
+                    document.getElementById('flecha3').style.visibility= "hidden";
+                }
+            }
+        </script>
+    </head>
+    <body style="height: 100%; width: 100%; margin: 0px;" onload="deshabilitaRetroceso()">
+        <div id="back" style="float: left; height: 100%; width: 100%; margin: 0px; text-align: center; " >
+            <img id="dad" src="imgInicio/az.jpg" alt="México" style=" position: absolute; left:0%; top: 0%; height:100%; width: 100%; filter: blur(4px);">
+            
+            <p style="position: absolute; top: 2%; left: 38%; font-size: 50px; color: green" >Mexico in Tempore </p>
+            <table style="top: 35%; left: 15%; position: absolute">
+                <tr>
+                    <td> <img id="flecha1" src="imgInicio/2Arrow.png"  alt="al" style=" height: 35%; visibility: hidden"></td>
+                    <td> <input type="button" id="b1" name="b1" value="Iniciar Sesión" onmouseover="dis(b1)" onmouseout="out(b1)" onclick="Inicio()" class="opc"> </td> 
+                
+                    <td> <img id="flecha2" src="imgInicio/2Arrow.png"  alt="al" style="margin-left: 20px; visibility: hidden; height: 30%"></td>
+                    <td> <input type="button" id="b2" name="b2" value="Crear Cuenta" onclick="CrearCuenta()" onmouseover="dis(b2)" onmouseout="out(b2)" class="opc"> </td>
+                
+                    <td> <img id="flecha3" src="imgInicio/2Arrow.png"  alt="al" style="margin-left: 20px; visibility: hidden; height: 30%"></td>
+                    <td> <input type="button" id="b3" name="b3" value="About Us" onclick="Fuentes()" onmouseover="dis(b3)" onmouseout="out(b3)" class="opc"> </td>
+                </tr>
+            </table>
+            <table style="position: absolute; height: 50%; width: 99%; top: 50%; ">
+                <tr>
+                    <td>
+                        <div id="fuentes" style="position: absolute; float: right; height: 45%; width: 99%; top:10%; visibility: hidden;" >
+                           <p style="text-align: center; color: white; font-size: 30px;">Acerca de nosotros</p>
+                           <p style="text-align: center;"><textarea cols="50" rows="8" style=" font-size: 15px; border: none; background-color: transparent; color: white;" readonly>El equipo de LearnSoft Tech esta conformado por un equipo cooperativo que se esfuerza en cada uno de sus proyectos.&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;Síguenos en nuestras redes:
+                            </textarea></p>
+                            <img id="UBFB" src="imgInicio/fb.png" onclick="location.href='https://www.facebook.com/LearnsofTech-1250520155065979/'" alt="FB" style="width: 5%; height: 40%;">   
+                        </div>
+                        
+                        <div id="textf" style="position: absolute;  height: 50%; width: 100%; visibility: hidden; top:10%;" >
+                            <form name="iniciar" method="post" action="Entrar.jsp">
+                                <p style="text-align: center; color: white; font-size: 30px;">Registrarse</p><br>
+                                <p style="text-align: center;"><input type="text" placeholder="Correo" name="correo" onkeypress="return validaC(event)" id="correo"> &nbsp;&nbsp;
+                                <input type="password" placeholder="Contraseña" name="c"  id="contraseña">&nbsp;&nbsp;
+                                <input type="submit" onclick="return entrar()" name="entrar" value="Iniciar" id="entrar" style=" border-radius: 10px 10px 10px 10px; background-color: whitesmoke; color: black; height: 15%; width: 10%;"></p>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

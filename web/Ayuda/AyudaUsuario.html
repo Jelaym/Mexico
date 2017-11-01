@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> Ayuda Usuario </title>
+        
+        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="AyUs.css">
+        <link rel="stylesheet" href ="fonts.css">
+        
+        <script>
+            function screenS(url){
+                document.getElementById("imag").src= url;
+            }
+        </script>
+        <script>
+            contador= 1;
+            window.onbeforeunload = atras;
+            function atras(){
+                history.back(contador);
+            }
+            function aumenta(){
+                contador++;
+                console.log(contador);
+            }
+        </script>
+    </head>
+    <body style="text-align: center">
+        <!--<img src="ayuda.jpeg" alt="Usuario" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px">!-->
+        <header>
+            <nav>
+                <ul>
+                    <li><a onclick="screenS('/MexicoInTempore/Ayuda/screen/ssCuesti.png')" id="link1"><span class="Color3"><i class="icon icon-paste"></i></span>Cuestionario</a>
+                        <ul class ="sub1">
+                            <li><a href="Cuest_Prof.html" onclick="aumenta()" target="2"><span><i class="icon icon-user-tie"></i></span>Profesor</a></li>
+                            <li><a href ="Cuest_Alumn.html" onclick="aumenta()" target="2"><span><i class="icon icon-user"></i></span>Alumno</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a onclick="screenS('/MexicoInTempore/Ayuda/screen/ssMapa.png')"><span class="Color2"><i class ="icon icon-earth"></i></span>Mapa de México</a>
+                        <ul class="sub3">
+                            <li><a href ="Mapa.html" onclick="aumenta()" target="2"><span><i class="icon icon-user icon-user"></i></span>Funcionalidad</a></li>
+                        </ul>
+                    </li>               
+                    <li><a onclick="screenS('/MexicoInTempore/Ayuda/screen/ssBio.png')"><span class="Color4"><i class ="icon icon-address-book"></i></span>Biografías</a>
+                        <ul class="sub2">
+                            <li><a href="Bios.html" onclick="aumenta()" target="2"><span><i class="icon icon-user-tie"></i></span>Profesor</a></li>
+                            <li><a href ="Bios_al.html" onclick="aumenta()" target="2"><span><i class="icon icon-user"></i></span>Alumno</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a onclick="location.href='/MexicoInTempore/paginaPrin/Seleccion.html'"><span class="Color2"><i class ="icon icon-address-booked"></i></span>Volver al Menú</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div style="text-align: center">
+            <h1 style="color: crimson; position: absolute;left:45%; top: 20%;">Ayuda a Usuario</h1>
+        </div>
+        
+        <div style="text-align: center; position: absolute; top: 30%;">
+            <p>
+            <div class="firsr">
+                <img id="imag" alt='trash' src="screen/ssMapa.png" style='margin-right: 30%; height: 60%; width:75%;'>
+            </div>
+            <div class="enmedio">
+                &nbsp;
+            </div>
+            <div class="second">
+                <iframe src="Cuest_Prof.html" width="500" height="380" name="2"></iframe>
+            </div>
+        </div>
+    </body>
+</html>
+
+

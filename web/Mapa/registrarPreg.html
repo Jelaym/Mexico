@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registrar una pregunta</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            label.regi{
+                font-size: 115%;
+            }
+        </style>
+        
+        <script>
+            function traer()
+            {
+                var loc = document.location.href;
+                if(loc.indexOf('?')>0)
+                {
+                    var getString = loc.split('?')[1];
+                    var GET = getString.split('&');
+                    var get = {};
+                    for(var i = 0, l = GET.length; i < l; i++){
+                        var tmp = GET[i].split('=');
+                        get[tmp[0]] = unescape(decodeURI(tmp[1]));
+                    }
+                    return get;
+                }
+            }
+            
+            window.onload = function ()
+            {
+                var valores= traer();
+                if(valores)
+                {
+                    var epoca = valores['E'];
+                    
+                    document.getElementById("epocas").innerHTML= '<center><h1> ' + epoca + '</h1></center>';
+                    document.getElementById("epocas").innerHTML+= '<center><label class="regi"> Registrar Pregunta </label></center>';
+                }else{
+                    location.assign("ModifyCuesti.html");
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <form name="formu" method="post" action="">
+            <div id="epocas">
+                
+            </div>
+            <br><br>
+            
+            <center><input type="number" placeholder="Numero de Pregunta" name="numPre"></center>
+            <br><br>
+            
+            <label style="position: absolute; top: 35%; left: 22%"> Escriba la Pregunta: </label>
+            
+            <div style="position: absolute; top: 40%; left: 20%">
+                <textarea cols="40" rows="10" style="resize: none"></textarea>
+            </div>
+            
+            <div style="position: absolute; top: 40%; right: 20%">
+                A) <input type="text" placeholder="Escriba la respuesta A)"> <input type="radio" name="resp"> <br><br>
+                B) <input type="text" placeholder="Escriba la respuesta B)"> <input type="radio" name="resp"> <br><br>
+                C) <input type="text" placeholder="Escriba la respuesta C)"> <input type="radio" name="resp"> <br><br>
+                D) <input type="text" placeholder="Escriba la respuesta D)"> <input type="radio" name="resp"> <br><br>
+            </div>
+        </form>
+    </body>
+</html>

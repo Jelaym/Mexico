@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Modificar cuestionario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            input.boton1{
+                background-color: lightgreen;
+            }
+            input.boton2{
+                background-color: orange;
+            }
+            input.boton3{
+                background-color: lightgray;
+            }
+            input.volver{
+                background-color: #939393;
+                color: whitesmoke;
+                width: 10%;
+                height: 10%;
+                
+                position: absolute;
+                right: 10%;
+                top: 80%;
+            }
+        </style>
+        
+        <script>
+            function epocas(){
+                document.getElementById("contenido").innerHTML= '<center>\n\
+                <h1> Seleccione una Época </h1>\n\
+                <input class="boton1" type="button" value="Independencia de México" onclick="location.href=\'registrarPre.jsp?E=\'+this.value">\n\
+                <input class="boton2" type="button" value="Guerra de Reforma" onclick="location.href=\'registrarPre.jsp?E=\'+this.value">\n\
+                <input class="boton3" type="button" value="Revolución Mexicana" onclick="location.href=\'registrarPre.jsp?E=\'+this.value">\n\
+            </center>';
+                document.getElementById("contenido").innerHTML+= "<input class='volver' type='button' value='Volver' onclick='normal()'>";
+            }
+            function normal(){
+                document.getElementById("contenido").innerHTML= '<center> <input type="button" value="Registrar" onclick="epocas()"> \n\
+                                                                    <input type="button" value="Modificar" onclick="location.href=\'modificar.jsp\'"> </center>';
+                //document.getElementById("contenido").innerHTML+= '<input type="button" value="Modificar" onclick="location.href=\'modificar.jsp\'"> </center>';
+            }
+        </script>    
+    </head>
+    <body>
+        <div id="contenido">
+            <center>
+                <input type="button" value="Registrar" onclick="epocas()">
+                <input type="button" value="Modificar" onclick="location.href='modificar.jsp'">
+            </center>
+        </div>
+    </body>
+</html>

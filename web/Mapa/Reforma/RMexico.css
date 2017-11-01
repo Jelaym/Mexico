@@ -1,0 +1,31 @@
+body{
+    background-color: chartreuse;
+    color: darkslategrey;
+    font-family: cursive;
+    font-style: italic;
+}
+.body2{
+    background-color: cadetblue;
+    color: snow;
+    font-family: cursive;
+    font-style: italic;
+}
+.body3{
+    background-color: mediumvioletred;
+    color:azure;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.bod4{
+    background-color:darkturquoise;
+    color:snow;
+    font-family: cursive;
+    font-style: italic;
+}
+.bod5{
+    background-color:goldenrod;
+    color: black;
+    font-family: cursive;
+    font-style: italic;
+}

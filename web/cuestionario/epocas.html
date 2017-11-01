@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            div.sConten{
+                display: inline-block; 
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+            }
+            div.sBotones{
+                height: 80%;
+            }
+            div.sMenu{
+                height: 20%;
+                width: 100%;
+                text-align: center;
+                background-color: #D0E9FA;
+            }
+            form{
+                display: inline-block;
+                width: 25%;
+            }
+            div.sElec{
+                height: 80%;
+                width: 100%;
+                text-align: center;
+                float: left;
+                display: inline-block;
+            }
+            div.sTitulo{
+                height: 20%;
+                padding: 1% 0;
+            }
+            div.sText{
+                text-align: center;
+                font-size: 2.5em;
+                padding: 2% 0;
+                color: white;
+            }
+             input[type= "submit"]{
+                border: none;
+                font-size: 1.4em;
+                padding-top: 20px;
+                border-radius: 4px;
+                padding-bottom: 20px;
+                text-decoration: none;
+                width: 60%;
+                background-color: #E2CCA2;
+                box-shadow: 1px 1px 2px grey;
+                transition: all 1s ease-in;
+            }
+            input[type= "submit"]:hover{
+                box-shadow: 2px 2px 3px grey;
+                background-color: #EDB03E;
+                width: 75%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contenido" class="sConten">
+            <div class="sElec" id="eleccion">
+                <div class="sTitulo"> 
+                    <div class="sText"> Seleccione una Época </div>
+                </div>
+                <div class="sBotones">
+                    <form method="post" name="formuI" action="registrarPre.jsp?E=Independencia de México&T=1">
+                        <input type="submit" value="Independencia">
+                        <input type="hidden" value="1" name="epoca">
+                    </form>
+
+                    <form method="post" name="formuR" action="registrarPre.jsp?E=Guerra de Reforma&T=2">
+                        <input type="submit" value="Guerra de Reforma">
+                        <input type="hidden" value="2" name="epoca">
+                    </form>
+
+                    <form method="post" name="formuM" action="registrarPre.jsp?E=Revolución Mexicana&T=3">
+                        <input type="submit" value="Revolución Mexicana">
+                        <input type="hidden" value="3" name="epoca">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

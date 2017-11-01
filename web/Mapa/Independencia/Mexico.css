@@ -1,0 +1,38 @@
+body{
+    background-color: mediumaquamarine;
+    color: honeydew;
+    font-family: cursive;
+}
+.body2{
+    background-color: crimson;
+    color: snow;
+    font-family: cursive;
+}
+.body3{
+    background-color:  darkorange;
+    color:black;
+    font-style: italic;
+    font-family:  cursive;
+        
+}
+.body4{
+    background-color: cornflowerblue;
+    color: azure;
+    font-style: italic;
+    font-family:  cursive;
+        
+}
+.body5{
+    background-color: deeppink;
+    color: azure;
+    font-style: italic;
+    font-family:  cursive;
+        
+}
+.body6{
+    background-color:  goldenrod;
+    color: azure;
+    font-style: italic;
+    font-family:  cursive;
+        
+}

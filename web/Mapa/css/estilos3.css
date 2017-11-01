@@ -1,0 +1,164 @@
+.Coahuila .Guanajuato .Zac
+{
+    border:0;
+    text-decoration:none;
+    float:left;
+    border-right:1px solid #fff;
+}
+.Coahuila img {
+    position: absolute;
+    width: 16%;
+    height: 35%;
+    top: 20.4%;
+    left:31.6%;
+    visibility: visible;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    
+}
+.Coahuila :hover img{
+    width:19%; height: 39%; top: 16.7%; left: 30%
+}
+
+.Guanajuato img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 8%;
+    height: 12%;
+    left: 39.4%;
+    top: 61%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.Guanajuato :hover img {
+    width:10%; height: 14%; top: 60%; left: 38%;
+}
+
+.Sn img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 11%;
+    height: 16.5%;
+    left: 39.4%;
+    top: 50%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.Sn :hover img {
+    width:14%; height: 19.5%; top: 49%; left: 38.4%;
+}
+
+.Zac img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 9%;
+    height: 20.5%;
+    left: 34.4%;
+    top: 46.3%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.Zac :hover img {
+    width:12%; height: 24.5%; top: 42.3%; left: 33.4%;
+}
+
+.EdoMex img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 5.6%;
+    height: 9%;
+    left: 43.5%;
+    top: 69.5%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.EdoMex :hover img {
+    width: 8%; height:14%; top: 67.5%; left: 41.8%;
+}
+
+.Df img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 3.5%;
+    height: 3.5%;
+    left: 45.59%;
+    top: 72.5%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.Df :hover img {
+    width:6.5%; height: 6.5%; top: 70.4%; left: 44.59%;
+}
+
+.Morelos img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 4.5%;
+    height: 5.5%;
+    left: 45.59%;
+    top: 73.5%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.Morelos :hover img {
+    width:6.5%; height: 6.5%; top: 73.5%; left: 44.59%;
+}
+
+.Chihuahua img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 13%;
+    height: 29.5%;
+    left: 23.35%;
+    top: 16.6%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.Chihuahua :hover img {
+    width:16.5%; height:33.5%; top: 15.5%; left: 21%;
+}
+
+.Durango img 
+{
+    position: absolute;
+    visibility: visible;
+    width: 18%;
+    height: 27.5%;
+    left: 24.35%;
+    top: 34.6%;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+}
+.Durango :hover img {
+    width:20%; height:31%; top: 32.6%; left: 23%;
+}
+
+
+
+
+

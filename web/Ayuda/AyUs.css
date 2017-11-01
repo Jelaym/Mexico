@@ -1,0 +1,226 @@
+*
+{
+    margin: 0;
+    padding :0;
+    text-align: center;
+}
+
+header
+{
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+nav
+{
+    top:-20px;
+    position:absolute;
+    left:0;
+    right:0;
+    margin: 20px auto;
+    max-width: 1000px;
+    width: 90%;
+}
+nav ul
+{
+    display: table;
+}
+
+nav > ul
+{
+    list-style: none;
+    width: 100%;
+    background: lightseagreen;
+    position: relative;
+    
+}
+nav > ul li
+{
+    display: table-cell;
+    
+}
+/*Sub menu*/
+nav > ul > li:hover > ul
+{
+    display: block;
+    height: 100%;
+}
+/*Animacion Submenu*/
+.sub1
+{
+    display: block;
+    position: absolute;
+    
+    background: cornflowerblue;
+    left:0;
+    right:0;
+    width: 32.5%;
+    overflow: hidden;
+    height: 0%;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+.sub2
+{
+    display: block;
+    position: absolute;
+    
+    background: deepskyblue;
+    left:52.4%;
+    right:700px;
+    width: 28.6%;
+    overflow: hidden;
+    height: 0%;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.sub3
+{
+   display: block;
+    position: absolute;
+    background: orange;
+    left: 23.9%;
+    right:300px;
+    width: 39%;
+    height: 0%;
+    overflow: hidden;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+nav > ul li a
+{
+    color: white;
+    display: block;
+    line-height: 20px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+nav > ul > li> a span
+{
+    background: darkblue;
+    display: block;
+    height: 100%;
+    width: 100%;
+    left:0;
+    position: absolute;
+    top:-55px;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+nav > ul > li> a span .icon
+{
+    display: block;
+    line-height:60px;
+}
+nav > ul > li >a:hover > span
+{
+    top:0;
+}
+/* 
+    Colores Iconos
+*/
+nav ul li a .Color1
+{
+    background: lightseagreen;
+}
+nav ul li a .Color2
+{
+    background: orangered;
+}
+nav ul li a .Color3
+{
+    background: cornflowerblue;
+}
+nav ul li a .Color4
+{
+    background: deepskyblue;
+}
+/*Estilo de Letras*/
+nav > ul
+{
+    font-family: serif;
+    font-style: italic;   
+}
+
+
+div
+{
+   width: 100%;
+   height: 100%;
+}
+
+.firsr
+{
+  width: 50%;
+  height: 100%;
+  float: left;
+  left:10%;
+  position: absolute;
+}
+.second
+{
+  width: 50%;
+  height: 100%;
+  float: left;
+  right: 5%;
+  position:absolute;
+  
+}
+  .enmedio
+{
+   width: 10%;
+   height: 100%;
+   float: left;
+}
+
+.body:before
+{
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+}
+.texto{
+    color: #0D9C67;
+    animation-name: colorc;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes colorc{
+    100%{ color: blue;}
+}
+.imah{
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    filter: blur(2px);
+}

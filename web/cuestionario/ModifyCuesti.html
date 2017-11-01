@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html style="width: 100%; height: 100%; margin: 0px">
+    <head style="width: 100%; height: 100%; margin: 0px"> 
+        <title>Modificar cuestionario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        
+        <style style="width: 100%; height: 100%; margin: 0px">
+            *{
+                font-family: serif;
+            }
+            
+            ul{
+                text-align: center;
+                list-style-type: none;
+                padding: 0px; 
+                margin: 0px;
+                background-color: black; 
+                border: 0px;
+            }
+            li{
+                height: 60px; 
+                width: auto;
+                position: relative;
+                background: linear-gradient(#292929, #242424);
+                display: inline-block; 
+                border-left: 2px solid goldenrod;
+            }
+            li a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 34px;
+                text-decoration: none;
+                font-size: 1.4em;
+            }
+            li :hover{
+                background: linear-gradient(#D77639, #242424)
+                    
+            }
+            
+            form{
+                display: inline-block;
+                width: 25%;
+            }
+            input[type= "submit"]{
+                border: none;
+                font-size: 1.4em;
+                padding-top: 20px;
+                border-radius: 4px;
+                padding-bottom: 20px;
+                text-decoration: none;
+                width: 60%;
+                background-color: #E2CCA2;
+                box-shadow: 1px 1px 2px grey;
+                transition: all 1s ease-in;
+            }
+            
+            img{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: -1;
+                top: 0%;
+                left: 0%;
+            }
+            
+            li:hover > ul {
+		display:block;
+            }
+            li ul li {
+                width: 100%;
+                height: 30px; 
+                border-top: 2px solid goldenrod;
+                z-index: 1;
+            }
+            li ul{
+                display:none;
+		position: absolute;
+                width: 100%;
+                color: white;
+            }
+            #formula{
+                visibility: hidden;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: -2;
+            }
+            #pagina{
+                border: none;
+            }
+            .frame{
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 52.59%;
+                overflow: hidden;
+                float: left;
+            }
+            .frame iframe{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            input[type= "text"]{
+                visibility: hidden;
+                position: absolute; 
+                top: 0px; 
+                left: 0px; 
+                width: 0px; 
+                height: 0px; 
+                z-index: -2;
+            }
+        </style>
+        
+        <script>
+            var contador= 0;
+            function epocas(){
+                document.getElementById("pagina").src= "/MexicoInTempore/cuestionario/epocas.html";
+            }
+            function page(pagina){
+                document.getElementById("pagina").src= pagina + ".jsp";
+            }
+            function pageForm(epoca){
+                var formulaTem= document.getElementById("formula");
+                if(contador == 0){
+                    formulaTem.innerHTML+= "<input type='submit' id='boton' name='boton' style='visibility: hidden; '>";
+                    contador++;
+                }
+                var valor= document.getElementById('epocaNom');
+                
+                if(epoca === "Ind"){
+                    valor.value= "Independencia de México";
+                }else{
+                    if(epoca === "Ref"){
+                        valor.value= "Guerra de Reforma";
+                    }else{
+                        if(epoca === "Rev"){
+                            valor.value= "Revolución Mexicana";
+                        }
+                    }
+                }
+                
+                if(valor.value !== ""){
+                    document.formula.boton.click();
+                }
+            }
+        </script>    
+    </head>
+    <body style="width: 100%; height: 100%; margin: 0px;">
+        <div id="contenido" class="sConten">
+            <div id="sMenu">
+                <ul>
+                    <li>
+                        <a onclick="epocas()">
+                            Registrar Preguntas
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="page('modificar')">
+                            Modificar Preguntas
+                        </a>
+                    </li>
+                    <li><a>Consultar Preguntas</a>
+                        <ul>
+                            <li onclick="pageForm('Ind')">Independencia</li>
+                            <li onclick="pageForm('Ref')">Guerra de reforma</li>
+                            <li onclick="pageForm('Rev')">Revolución</li>
+                        </ul>
+                    </li>
+                    <li style="border-right: 2px solid goldenrod;">
+                        <a onclick="location.href='/MexicoInTempore/paginaPrin/Seleccion.html'">
+                            Volver al menú
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <form id="formula" name="formula" method="post" action="mostrarPregs.jsp" style="visibility: hidden; position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; z-index: -2" target="1">
+                <input type='text' id='epocaNom' name='epoca' style='visibility: hidden'/>
+            </form>
+            
+            <img src="imgCuesti/mxBandera.jpeg">
+            <div class="frame">
+                <iframe id="pagina" src="" name="1" style='background: transparent'></iframe>
+            </div>
+        </div>
+    </body>
+</html>

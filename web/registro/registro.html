@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html style="height: 100%; width: 100%; margin: 0px">
+    <head>
+        <title>Tipo de Usuario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <link rel="stylesheet" href="css/res.css">
+        
+        <script>
+            var i= 0,timer;
+            function ver(){
+                i= 0.05;
+                timer= setInterval('viendo()',100);
+            }
+            function viendo(){
+                i+= 0.05;
+                document.getElementById("titulo").style.color= "rgba(253,228,3,"+i+")";
+                
+                if(i === 2){
+                    timer= clearInterval();
+                }
+            }
+            function mostrar(){
+                document.getElementById("image").style.visibility= "visible";
+                document.getElementById("Formu").style.visibility= "visible";
+                ver();
+            }
+        </script>
+    </head>
+    <body style="background-color: #C7C7C3; height: 100%; width: 100%; margin: 0px; font-family: serif" onload="mostrar()">
+        <img src="user.jpeg" id="image" style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; visibility: hidden">
+        <form name="Formu" id="Formu" style="display: block; visibility: hidden">
+            <h1 id="titulo">¿Qué tipo de usuario eres?</h1>
+            
+            <div class="giroDiv" style="display:block;; position: absolute; left: 25%; top: 35%">
+                <input type="button" id="Alumno" name="Alumno" onclick="location.replace('Ccuenta.html?t='+this.name);">
+            </div>
+            <label style="display:block; position: absolute; left: 27.5%; top: 45%" for="Alumno"> Alumno </label>
+            
+            <div class="giroDiv" style="display:block; position: absolute; left: 55%; top: 35%;">
+                <input type="button" id="Maestro" name="Maestro" onclick="location.replace('Ccuenta.html?t='+this.name);">
+            </div>
+            <label style="display:block; position: absolute; left: 57.5%; top: 45%;" for="Maestro"> Maestro </label>
+        </form>
+    </body>
+</html>

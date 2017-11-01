@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> La Guerra de Reforma </title>
+
+        <link rel="icon" type="image/x-icon" href="icon.ico" />
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/estilos2.css" type="text/css">
+
+        <script>
+            var persona = localStorage.getItem("tipo");
+            if((persona < 1) || (persona > 2)){
+                location.replace("/MexicoInTempore/Error.html");
+            }
+        </script>
+        
+        <style type="text/css">
+            .botonL{
+                font-size: 20px;
+                background-color: transparent;
+                position: absolute; 
+                border: none;
+                outline: none;
+                color: black;
+            }
+            .avanzar {
+                border-radius: 10px;
+                background-color: goldenrod;
+                color: white;
+                width: 100%;
+                height: 100%;
+                font-size: 20px;
+            }
+            .animation{
+               animation-name: colorc;
+               animation-duration: 10s;
+               animation-iteration-count: infinite;
+            }
+            @keyframes colorc{
+                0%{ color: green;}
+                40%{color: white;}
+                80%{color: red;}
+                100%{ color: green;}
+            }
+            .Menu{
+                font-size: 20px;
+                border-radius: 10px;
+                background-color: goldenrod;
+                color: white;
+                top:95%;
+                left:85%;
+                position: fixed; 
+                
+            }
+        </style>
+
+        <script>
+            function info()
+            {
+
+                document.getElementById("frame").style.visibility = "visible";
+                document.getElementById("frame2").style.visibility = "visible";
+                document.getElementById("frame3").style.visibility = "hidden";
+                document.getElementById("frame4").style.visibility = "hidden";
+                document.getElementById("frame5").style.visibility = "hidden";
+                document.getElementById("frame6").style.visibility = "hidden";
+                document.getElementById("frame7").style.visibility = "hidden";
+                document.getElementById("frame8").style.visibility = "hidden";
+                document.getElementById("frame9").style.visibility = "hidden";
+                document.getElementById("frame10").style.visibility = "hidden";
+
+
+            }
+            function info2()
+            {
+                document.getElementById("frame").style.visibility = "hidden";
+                document.getElementById("frame2").style.visibility = "hidden";
+                document.getElementById("frame3").style.visibility = "visible";
+                document.getElementById("frame4").style.visibility = "visible";
+                document.getElementById("frame5").style.visibility = "hidden";
+                document.getElementById("frame6").style.visibility = "hidden";
+                document.getElementById("frame7").style.visibility = "hidden";
+                document.getElementById("frame8").style.visibility = "hidden";
+                document.getElementById("frame9").style.visibility = "hidden";
+                document.getElementById("frame10").style.visibility = "hidden";
+            }
+            function info3() {
+                document.getElementById("frame").style.visibility = "hidden";
+                document.getElementById("frame2").style.visibility = "hidden";
+                document.getElementById("frame3").style.visibility = "hidden";
+                document.getElementById("frame4").style.visibility = "hidden";
+                document.getElementById("frame5").style.visibility = "visible";
+                document.getElementById("frame6").style.visibility = "visible";
+                document.getElementById("frame7").style.visibility = "hidden";
+                document.getElementById("frame8").style.visibility = "hidden";
+                document.getElementById("frame9").style.visibility = "hidden";
+                document.getElementById("frame10").style.visibility = "hidden";
+
+            }
+            function info4() {
+                document.getElementById("frame").style.visibility = "hidden";
+                document.getElementById("frame2").style.visibility = "hidden";
+                document.getElementById("frame3").style.visibility = "hidden";
+                document.getElementById("frame4").style.visibility = "hidden";
+                document.getElementById("frame5").style.visibility = "hidden";
+                document.getElementById("frame6").style.visibility = "hidden";
+                document.getElementById("frame7").style.visibility = "visible";
+                document.getElementById("frame8").style.visibility = "visible";
+                document.getElementById("frame9").style.visibility = "hidden";
+                document.getElementById("frame10").style.visibility = "hidden";
+
+            }
+            function info5() {
+                document.getElementById("frame").style.visibility = "hidden";
+                document.getElementById("frame2").style.visibility = "hidden";
+                document.getElementById("frame3").style.visibility = "hidden";
+                document.getElementById("frame4").style.visibility = "hidden";
+                document.getElementById("frame5").style.visibility = "hidden";
+                document.getElementById("frame6").style.visibility = "hidden";
+                document.getElementById("frame7").style.visibility = "hidden";
+                document.getElementById("frame8").style.visibility = "hidden";
+                document.getElementById("frame9").style.visibility = "visible";
+                document.getElementById("frame10").style.visibility = "visible";
+
+            }
+
+        </script>
+    </head>
+    <body style="height: 100%; width: 100%; margin: 0px; background-image:  url('fondo.jpg');">
+        <h1 class="animation" style="position: absolute; top: 2px; left: 40%; text-align: center"> La Guerra De Reforma </h1>
+        <div>
+            <img src="IMG/Mapa2.png" alt="Mapa" style="height:88% ; width:77% ;top:10%; visibility: visible ;position: absolute ">
+        </div>
+        <div>
+            <iframe src="Reforma/DF.html" id="frame" width="350" height="300" style="position: absolute; left: 4%; top: 13%; visibility: hidden">
+            </iframe> 
+
+            <iframe src="Reforma/DfVid.html" id="frame2" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+
+
+            <iframe src="Reforma/SnLuis.html" id="frame3" width="350" height="300" style="position: absolute; left: 4%; top: 13%; visibility: hidden">
+            </iframe> 
+
+            <iframe src="Reforma/SnLuisIMG.html" id="frame4" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+
+
+
+            <iframe src="Reforma/Jalisco.html" id="frame5" width="350" height="300" style="position: absolute; left: 4%; top: 13%; visibility: hidden">
+            </iframe> 
+
+            <iframe src="Reforma/JaliscoIM.html" id="frame6" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+
+
+            <iframe src="Reforma/EdoMex.html" id="frame7" width="350" height="300" style="position: absolute; left: 4%; top: 13%; visibility: hidden">
+            </iframe> 
+
+            <iframe src="Reforma/EdoMExVid.html" id="frame8" width="350" height="300" style="position: absolute; left: 54%; top: 13%; visibility: hidden">
+            </iframe> 
+
+            <iframe src="Reforma/Ayutla.html" id="frame9" width="350" height="300" style="position: absolute; left: 4%; top: 13%; visibility: hidden">
+            </iframe> 
+
+            <iframe src="Reforma/IMGAyutla.html" id="frame10" width="350" height="300" style="position: absolute; left: 53%; top: 13%; visibility: hidden">
+            </iframe> 
+
+        </div>
+
+        <div class="SnLuis">
+            <div>
+                <img src="IMG/SnLuis.png" alt="San Luis" onclick="info2();" >
+            </div>
+        </div>
+        <div class="Gua">
+            <div>
+                <img src="IMG/Gua.png" alt="Guadalajara" onclick="info3();">
+            </div>
+        </div>
+
+        <div class="Oaxaca">
+            <div>
+                <img src="IMG/Oaxaca.png" alt="Oaxaca" onclick="info5();">
+            </div>
+        </div>
+
+        <div class="Quer">
+            <div>
+                <img src="IMG/Quer.png" alt="Queretaro" onclick="info4();">
+            </div>
+        </div>
+
+        <div class="Df">
+            <div>
+                <img src="IMG/Df.png" alt="DF" onclick="info();">
+            </div>
+        </div>
+
+        <div style="position: absolute; top: 80%; left: 85%;">
+            <input type="button" value="Volver de Epoca" onclick="location.href= 'Mapa.html'" class="avanzar">
+        </div> 
+        <form method="post" name="formu">
+            <div style="position: absolute; top: 90%; left: 85%;">
+                <input type="submit" value="Avanzar de epoca" class="avanzar" name="avanza">
+                <input type="hidden" value="2" name="epo">
+            </div>    
+        </form>
+        <div>
+            <img src="IMG/Linea.png" alt ="imagen" style="position: absolute; left: 87.5%; top: 2px;">
+            <p style="position: absolute; font-weight: bold; font-size: 20px; left: 81%; top: 80px">1810-1821</p>
+            <p style="position: absolute; font-weight: bold; font-size: 20px; left: 81%; top: 205px">1858-1861</p>
+            <p style="position: absolute; font-weight: bold; font-size: 20px; left: 81%; top: 340px">1910-1920</p>
+            
+            
+            
+            
+            <input type="button" id="ind" value="Independencia" onclick="location.href = 'Mapa.html' " class="botonL" style="left: 91%; top: 93px" >
+            <input type="button" id="ref" value="Reforma" onclick="location.href = 'Mapa2.html' " class="botonL" style="left: 91%; top: 219px; color: gray;" disabled>
+            <input type="button" id="rev" value="Revolución" onclick="location.href = 'Mapa3.html' " class="botonL" style="left: 91%; top: 352px; color: gray; " disabled>
+            
+            <script>
+                var epoca = localStorage.getItem("epoch");
+                var persona= localStorage.getItem("tipo");
+                
+                if(persona == 2){
+                    document.getElementById("ref").removeAttribute("disabled");
+                    document.getElementById("rev").removeAttribute("disabled");
+                    document.getElementById("ref").style.color = "black";
+                    document.getElementById("rev").style.color = "black";
+                }else{
+                    if(epoca === 1){
+                        document.getElementById("ref").removeAttribute("disabled");
+                        document.getElementById("ref").style.color = "black";
+                    }else{
+                        if(epoca === 2){
+                            document.getElementById("ref").removeAttribute("disabled");
+                            document.getElementById("rev").removeAttribute("disabled");
+                            document.getElementById("ref").style.color = "black";
+                            document.getElementById("rev").style.color = "black";
+                        }else{
+                            if(epoca === 3){
+                                document.getElementById("ref").removeAttribute("disabled");
+                                document.getElementById("rev").removeAttribute("disabled");
+                                document.getElementById("ref").style.color = "black";
+                                document.getElementById("rev").style.color = "black";
+                            }
+                        }
+                    }
+                } 
+            </script>
+        </div>
+        <input type="button" value="Volver al Menú" id="Seleccion" onclick="location.href = '/MexicoInTempore/paginaPrin/Seleccion.html' "  class="Menu" name="seleccion">
+        <script>
+            var persona= localStorage.getItem("tipo");
+            if(persona == 1){
+                document.formu.action= "/MexicoInTempore/cuestionario/quiz.jsp";
+            }else{
+                if(persona == 2){
+                    document.formu.action= "/MexicoInTempore/Mapa/envioEpo.jsp";
+                }
+            }
+        </script>
+    </body>
+</html>

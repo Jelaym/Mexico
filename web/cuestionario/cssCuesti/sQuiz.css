@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6/05/2017, 03:08:24 PM
+    Author     : Touchier
+*/
+    *{
+        font-family: serif;
+    }
+    body{
+        display: block;
+        background-color: #939393;
+    }
+    #menu{
+        background-color: black;
+        color: white;
+        height: max-content;
+        width: 100%;
+        position: fixed;
+        z-index: 3;
+        margin: 0;
+        padding: 0;
+    }
+    #titulo{
+        text-align: left;
+        font-size: 2em;
+    }
+    .instruccion{
+        text-align: left;
+        font-size: 1em;
+    }
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        padding-right: 20px;
+    }
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        font-size: 1.5em;
+    }
+    nav ul li a {
+        display: block;
+        padding: 0 10px;
+        text-decoration: none;
+    }
+    nav ul li a:hover{
+        background: white;
+        color: black;
+    }
+    nav{
+        float: right;
+        margin: 0;
+        padding: 0;
+        padding-right: 20px;
+    }
+
+    #contenido{
+        padding-top: 140px;
+        font-size: 1em;
+        line-height: 1.5em;
+        text-align: center;
+    }
+    article{
+        position: absolute;
+        left: 5%;
+        width: 90%;
+        background-color: white;
+        top: 120px;
+        margin: 20px auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 50px;
+    }
+    .divPri div{
+        background-color: transparent;
+        width: 50%;
+        float: left;
+        font-size: 1.5rem;
+        line-height: 1.3em;
+        height: auto;
+        word-wrap: break-word;
+        transition: all 1.5s ease-in;
+    }
+    #segunda{
+        visibility: hidden;
+    }
+    #div6{
+        padding-top: 50px;
+        color: red;
+        font-size: 2em;
+    }
+    #divi6{
+        padding-top: 50px;
+        color: red;
+        font-size: 2em;
+    }

@@ -1,0 +1,487 @@
+<!DOCTYPE html><!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel='stylesheet'>        
+        <link rel='stylesheet' href='./css/main.css'>
+        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        
+        <script>
+            var numGrupos;
+            function caracteres(e)
+            {
+               var keychar= e.keyCode || e.which;
+               
+               if((keychar >= 65 && keychar <= 90) || (keychar >= 97 && keychar <= 122) || (keychar === 8) ||
+                    (keychar >= 160 && keychar <= 163) || (keychar === 130) || (keychar === 181) || (keychar === 239) ||
+                    (keychar === 144) || (keychar === 214) || (keychar === 224) || (keychar === 233))
+               {
+                   return true;
+               }
+               else
+               {
+                   return false;
+               }
+            }
+            
+            function caracteresEspacio(e)
+            {
+               var keychar= e.keyCode || e.which;
+               
+               if((keychar >= 65 && keychar<=90)||(keychar>=97 && keychar<=122)|| (keychar === 8) || (keychar === 32) ||
+                        (keychar >= 160 && keychar <= 163) || (keychar === 130) || (keychar === 181) || (keychar === 239) ||
+                        (keychar === 144) || (keychar === 214) || (keychar === 224) || (keychar === 233))
+               {
+                   return true;
+               }
+               else
+               {
+                   return false;
+               }
+            }
+            
+            function letrasNum(e){
+                var keychar= e.keyCode || e.which;
+               
+                if(keychar !== 8){
+                    var campo= document.getElementById("rfc").value;
+                    if(campo.length >= 0 && campo.length <= 3){
+                        return ((keychar >= 65 && keychar<=90) || (keychar>=97 && keychar<=122) ||
+                            (keychar >= 160 && keychar <= 163) || (keychar === 130) || (keychar === 181) || (keychar === 239) ||
+                            (keychar === 144) || (keychar === 214) || (keychar === 224) || (keychar === 233))? true: false;
+                    }else{
+                        if(campo.length >= 4 && campo.length <= 9){
+                            return (keychar >= 48 && keychar <= 57)? true: false;
+                        }
+                    }
+                }else{
+                    return true;
+                }
+            }
+            
+            function contraseñsa()
+            {
+                var contra= document.getElementById("password");
+                var confirm = document.getElementById("password2");
+                var cadena;
+                var cadena2;
+                
+                cadena = contra.value;
+                cadena2 = confirm.value;
+                
+                while(cadena2 !== cadena)
+                {
+                    alert("Las contraseñas no coinciden");
+                    return false;
+                }
+            }
+            
+            function opcis(datos)
+            {
+                var dato = datos.options[datos.selectedIndex].value;
+                if (dato === "Primer Semestre")
+                {
+                    comboM = ["1IM1","1IM2","1IM3","1IM4","1IM5","1IM6","1IM7","1IM8","1IM9"];
+                    for (var i = 0; i < numGrupos; i++)
+                    {
+                        for(var o= 0; o < comboM.length; o++){
+                            document.getElementById("Grupos"+i).options[o + 1] = new Option(comboM[o]);
+                        }
+                    }
+                }else
+                {
+                    if (dato === "Segundo Semestre")
+                    {
+                        comboH = ["2IM1","2IM2","2IM3","2IM4","2IM5","2IM6","2IM7","2IM8","2IM9"];
+                        for (i = 0; i < numGrupos; i++)
+                        {
+                            for(o= 0; o < comboH.length; o++){
+                                document.getElementById("Grupos"+i).options[o + 1] = new Option(comboH[o]);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            function numeroVal(e){
+                var llave= e.which || e.keyCode;
+                
+                return ((llave >= 48 && llave <= 57) || (llave === 8)) ? true : false;
+            }
+            function numsA(input){
+                var valor= input.value.length;
+                
+                if(valor === 10){
+                    input.setCustomValidity('');
+                }else{
+                    input.setCustomValidity('La boleta debe tener 10 numeros');
+                }
+            }
+            /*function numsP(input){
+                var valor= input.value.length;
+                
+                if(valor === 10){
+                    input.setCustomValidity('');
+                }else{
+                    input.setCustomValidity('El RFC debe tener 10 caracteres');
+                }
+            }*/
+            
+            //AGREGADO PARA PASAR VARIABLE
+            function getGET()
+            {
+                // capturamos la url
+                var loc = document.location.href;
+                // si existe el interrogante
+                if(loc.indexOf('?')>0)
+                {
+                    // cogemos la parte de la url que hay despues del interrogante
+                    var getString = loc.split('?')[1];
+                    // obtenemos un array con cada clave=valor
+                    var GET = getString.split('&');
+                    var get = {};
+                    // recorremos todo el array de valores
+                    for(var i = 0, l = GET.length; i < l; i++){
+                        var tmp = GET[i].split('=');
+                        get[tmp[0]] = unescape(decodeURI(tmp[1]));
+                    }
+                    return get;
+                }
+            }
+            //HASTA ACA
+            window.onload = function ()
+            {
+                //AGREGADO PARA PASAR VARIABLE
+                var valores= getGET();
+                if(valores)
+                {
+                    //recogemos los valores que nos envia la URL en variables para trabajar con ellas
+                    var tipo = valores['t'];
+                    
+                    document.getElementById("saludo").value+= " "+ tipo + "!";
+                    //SE CREAN LOS OBJETOS BOLETA O RFC
+                    if(tipo === "Alumno")
+                    {
+                        document.getElementById("TodoGrupos").innerHTML+= '<select class="input" name="Grupos0" onkeypress="return numeroVal(event)" id="Grupos0" required onchange="p()"> <option value="y">Elije tu grupo</option> </select>';
+                        document.getElementById("iden").innerHTML+='<input class="input" oninput="numsA(this)" autofocus onkeypress="return numeroVal(event)" style="width: 97%" type="text" placeholder="&#128100; Boleta" name="rfc" required maxlength="10">';
+                        numGrupos = 1;;
+                    }
+                    else
+                    {
+                        if(tipo === "Maestro")
+                        {
+                            //document.getElementById("Grupos").style.visibility= "hidden";
+                            document.getElementById("iden").innerHTML+='<input class="input" autofocus style="width: 97%" type="text" placeholder="&#128100; RFC" name="rfc" required maxlength="10" \n\
+                                                                            onkeypress="return letrasNum(event)" pattern="[A-Za-z]{4}[0-9]{6}" id="rfc"\n\
+                                                                            title="TU RFC SON TUS 10 PRIMEROR DIGITOS DE TU CURP, EJEMPLO: \"ABCD990302\""/>';
+                            while(isNaN(numGrupos)){
+                                numGrupos= parseInt(prompt("¿Cuantos grupos tiene? (En Números)",""));
+                                
+                                if(isNaN(numGrupos)){
+                                    numGrupos = "";
+                                    location.href= 'registro.html';
+                                }else{
+                                    if((numGrupos > 0)&&(numGrupos < 10)){
+                                        document.getElementById("numG").value= numGrupos;
+                                        for(var i= 0; i < numGrupos; i++){
+                                            document.getElementById("TodoGrupos").innerHTML+= '<select class="input" name="Grupos' + i + '" id="Grupos' + i + '" onchange="actualizar()"> <option value="y">Elije tu grupo</option> </select>';
+                                        }
+                                        document.getElementById("paseDiv").innerHTML= '<input class="input" type="password" maxlength="10" name="pase" placeholder="Contraseña para Registro" required onpaste="return false" oncopy="return false">';
+                                    }else{
+                                        if(numGrupos <= 0){
+                                            alert("Debes tener minimo un grupo.");
+                                        }else{
+                                            if(numGrupos >= 10){
+                                                alert("No puedes tener mas de 9 grupos.");
+                                            }
+                                        }
+                                        numGrupos = "a";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    location.replace("registro.html");
+                }
+                //HASTA ACA
+            };
+            
+            function actualizar(){
+                var dato= document.getElementById("comb");
+                
+                if(dato.selectedIndex === 1){
+                    combo= "1IM1,1IM2,1IM3,1IM4,1IM5,1IM6,1IM7,1IM8,1IM9,";
+                }else{
+                    if(dato.selectedIndex === 2){
+                        combo= "2IM1,2IM2,2IM3,2IM4,2IM5,2IM6,2IM7,2IM8,2IM9,";
+                    }
+                }
+                var temporal= "";
+                var contar= 0;
+                var valor= [];
+                
+                for(var i= 0; i < numGrupos; i++){
+                    temporal= document.getElementById("Grupos" + i);
+                    if(temporal.selectedIndex !== 0){
+                            valor[i]= temporal.options[temporal.selectedIndex].value + ",";
+                    }else{
+                        valor[i]= "";
+                    }
+                }
+                
+                for(var i= 0; i < valor.length; i++){
+                    if(valor[i] !== ""){
+                        combo= combo.replace(valor[i], "");
+                    }
+                }
+                console.log(combo);
+                var comboBox= combo.split(",");
+                var grupo= "", num= "";
+                var cambio= false;
+                var aumenta= 1;
+                
+                for(var a= 0; a < numGrupos; a++){
+                    temporal= document.getElementById("Grupos" + a);
+                   
+                    if(temporal.selectedIndex !== 0){
+                        grupo= temporal.options[temporal.selectedIndex].value;
+                        console.log(grupo);
+                        for(var i= 1; i < temporal.options.length; i++){
+                            temporal.options[i]= null;
+                        }
+                        
+                        if(grupo.length === 4){
+                            num= parseInt(grupo.charAt(3));
+                        }
+                        cambio= false;
+                        aumenta= 1;
+                        var numero= 0;
+                        
+                        for(var i= 0; i < comboBox.length ; i++){
+                            if(cambio === false){
+                                numero= parseInt(comboBox[i].charAt(3));
+                                console.log("NUm" + num);
+                                console.log("numero" + numero);
+                            }
+                            
+                            if((numero > num) && (cambio === false)){
+                                console.log("Entra");
+                                cambio= true;
+                                temporal.options[aumenta]= new Option(grupo);
+                                temporal.options.selectedIndex= aumenta;
+                            }else{
+                                if((cambio === false) && (i < (comboBox.length-1))){
+                                    temporal.options[aumenta]= new Option(comboBox[i]);
+                                }else{
+                                    if(cambio === true){
+                                        temporal.options[aumenta]= new Option(comboBox[i-1]);
+                                    }else{
+                                        temporal.options[aumenta]= new Option(grupo);
+                                        temporal.options.selectedIndex= aumenta;
+                                    }
+                                }
+                            }
+                            aumenta++;
+                        }
+                    }else{
+                        for(var i= 1; i < temporal.options.length; i++){
+                            temporal.options[i]= null;
+                        }
+                        aumenta= 1;
+                        for(var i= 0; i < comboBox.length-1 ; i++){
+                            temporal.options[aumenta]= new Option(comboBox[i]);
+                            aumenta++;
+                        }
+                    }
+                }
+            }
+            
+            function correoVal(input)
+            {
+                var arroba= 0, puntoF= 0, letra1= 0, letra2= 0;
+
+                for(var i= 0; i < input.value.length; i++)
+                {
+                    if((i === 0)&&(input.value.charAt(i) === "@"))
+                    {
+                        i= input.value.length+1;
+                        arroba= -1;
+                    }
+                    else
+                    {
+                        if(input.value.charAt(i) === "@")
+                        {
+                            arroba++;
+                        }
+                        else
+                        {
+                            if((arroba === 1)&&(input.value.charAt(i) !== ".")&&(input.value.charAt(i) !== "")&&(puntoF === 0))
+                            {
+                                letra1++;
+                            }
+                            else
+                            {
+                                if((letra1 > 0) && (arroba === 1) && (input.value.charAt(i) === "."))
+                                {
+                                    puntoF++;
+                                }
+                                else
+                                {
+                                    if((puntoF === 1) && (input.value.charAt(i) !== ""))
+                                    {
+                                        letra2++;
+                                        i= input.value.length+1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if(arroba === -1)
+                {
+                    input.setCustomValidity("Debe haber un caracter antes de la arroba.");
+                }
+                else
+                {
+                    if(arroba === 0)
+                    {
+                        input.setCustomValidity("El correo debe contener una arroba (@).");
+                    }
+                    else
+                    {
+                        if(arroba !== 1)
+                        {
+                            input.setCustomValidity("El correo debe llevar solo una arroba (@).");
+                        }
+                        else
+                        {
+                            if(letra1 === 0)
+                            {
+                                input.setCustomValidity('Debe haber un caracter despues de la arroba que no sea el punto (.)');
+                            }
+                            else
+                            {
+                                if(puntoF !== 1)
+                                {
+                                    input.setCustomValidity("Debe contener solo un punto (.) despues del caracter.");
+                                }
+                                else
+                                {
+                                    if(letra2 === 0)
+                                    {
+                                        input.setCustomValidity("Debe haber un caracter que no sea arroba (@) ni punto (.) al final.");
+                                    }
+                                    else
+                                    {
+                                        input.setCustomValidity('');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            function contraseña(){
+                var text1= document.getElementById("comb"), text2;
+                
+                if(text1.selectedIndex !== 0)
+                {
+                    text1.setCustomValidity('');
+                    for(var i= 0; i < numGrupos; i++)
+                    {
+                        text1= document.getElementById("Grupos"+i);
+                        
+                        if(text1.selectedIndex !== 0)
+                        {
+                            text1.setCustomValidity('');
+                            text2= document.getElementById("password");
+                            text1= document.getElementById("password2");
+                            
+                            if(text1.value !== text2.value)
+                            {
+                                text1.setCustomValidity("Las contraseñas no coinciden.");
+                            }
+                            else
+                            {
+                                text1.setCustomValidity('');
+                            }
+                        }
+                        else
+                        {
+                            text1.setCustomValidity("Escoge un Grupo");
+                            i= numGrupos;
+                        }
+                    }
+                    
+                    
+                }else{
+                    text1.setCustomValidity('Escoge un Semestre');
+                }
+            }
+            
+            function validarC(e){
+                var llave= e.keyCode || e.which;
+                
+                if(llave === 32){
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form_top">
+                <h2>Mexicum I<span>n Tempore</span></h2>
+                <br>
+                <input type='button' value='¡Hola' id='saludo' style='background-color: transparent; border: 0px'>
+            </div>
+            <form class="form_reg" action="registraUsser.jsp" name="formulario">
+                
+                <div id="iden" style="width: 100%">
+                    
+                </div>
+                
+                <input class="input" type="text" name="nombre" id="nombre" maxlength="30" placeholder="&#128100; Nombre" required onkeypress="return caracteresEspacio(event);" onpaste="return false">
+                <input class="input" type="text" name="apellidoP" id="aP" maxlength="20" placeholder="&#128100; Apellido Paterno" required onkeypress="return caracteres(event);" onpaste="return false">
+                <input class="input" type="text" name="apellidoM" id="aM" maxlength="20" placeholder="&#128100; Apellido Materno" required onkeypress="return caracteres(event);" onpaste="return false">
+                <input class="input" type="email" name="correo" id="correoT" maxlength="40" oninput="correoVal(this)" required onkeypress="return validarC(event);" placeholder="&#128231; Email">
+                <input class="input" type="text" name="nombreU" id="usser" maxlength="20" placeholder="&#128100; Username" onkeypress="return validarC(event)" required onpaste="return false">
+                
+                <select class="input" name="Semestre" id ="comb" onchange="opcis(Semestre)">
+                    <option value="x">--Elige tu semestre--</option>
+                    <option value="Primer Semestre">Primer Semestre</option>
+                    <option value="Segundo Semestre">Segundo Semestre</option>     
+                </select>
+
+                <div id="TodoGrupos">
+                    <input type="hidden" id="numG" name="numG">
+                </div>     
+                
+                <div>
+                    <input class="input" type="password" maxlength="20" name="contra" placeholder="Contraseña" required id="password" onpaste="return false" oncopy="return false">
+                    <input class="input" type="password" maxlength="20" placeholder="Repetir contraseña" required id="password2" onpaste="return false" oncopy="return false">
+                </div>
+                    
+                <div id="paseDiv">
+                    
+                </div>
+                
+                <div class="btn_form">
+                    <input class="btn_submit" type="submit" value="REGISTRAR" name="regi" onclick="return contraseña()">
+                    <input class="btn_reset" type="reset" value="LIMPIAR">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

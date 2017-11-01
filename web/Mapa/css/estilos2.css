@@ -1,0 +1,91 @@
+
+.SnLuis .Gua .Df .Oaxaca .Quer 
+{
+    border:0;
+    text-decoration:none;
+    float:left;
+    border-right:1px solid #fff;
+}
+
+.SnLuis img {
+    position: absolute;
+    border:0;
+    display: block;
+    width:17.5%;
+    height:26%;
+    left: 35.3%;
+    top: 45%;
+    visibility: visible;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    
+}
+.SnLuis :hover img {width: 22.5%; height: 32%; left: 33.6%;top:41%}
+
+.Gua img {
+    position: absolute;
+    display: block;
+    border:0;
+    width:13.8%;
+    height:23.3%;
+    left: 26.1%;
+    top: 55.4%;
+    visibility: visible;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    -o-transition-duration: .7s;
+}
+.Gua :hover img {width: 18.8%; height: 28.3%; left: 23.5%;top:52.4%}
+
+
+.Oaxaca img {
+    position: absolute;
+    display: block;
+    border:0;
+    width:11.8%;
+    height:16.1%;
+    left: 36.7%;
+    top: 74.4%;
+    visibility: visible;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    -o-transition-duration: .7s;
+}
+.Oaxaca :hover img {width: 13.8%; height: 20.3%; left: 36.1%;top:73.4%}
+
+
+.Df img {
+    position: absolute;
+    display: block;
+    border:0;
+    width:1.99%;
+    height:3.5%;
+    left: 44.2%;
+    top: 72.7%;
+    visibility: visible;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    -o-transition-duration: .7s;
+}
+.Df :hover img {width: 3.8%; height: 4.3%; left: 43.3%;top:72.4%}
+
+.Quer img {
+    position: absolute;
+    display: block;
+    border:0;
+    width:6.8%;
+    height:13.7%;
+    left: 41.5%;
+    top: 65%;
+    visibility: visible;
+    cursor:pointer;
+    -webkit-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    -o-transition-duration: .7s;
+}
+.Quer :hover img {width: 7.8%; height: 15.7%; left: 41.1%;top:64%}
