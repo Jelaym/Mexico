@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+    LearnSoftTech
 -->
 <html>
     <head>
-        
-        
         <title>Mexico In Tempore</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,6 +108,10 @@ and open the template in the editor.
                                 }else{
                                     if(boton === "cuestionario"){
                                         location.href= "/MexicoInTempore/cuestionario/ModifyCuesti.html";
+                                    }else{
+                                        if(boton === "estadisticas"){
+                                            location.href= "/MexicoInTempore/paginaPrin/graficas.jsp";
+                                        }
                                     }
                                 }
                             }
@@ -167,12 +167,14 @@ and open the template in the editor.
                 <li class="option opc"><center><input type="button" value="Ayuda" name="Ayuda" id="Ayuda" onmouseover="imgcambio(Ayuda)" onmouseout="fuera()" onclick="acciones(Ayuda)" class="boton"></center></li>
                 <li class="option opc"><center><input type="button" value="Modificar Cuenta" name="Modificar" id="Modificar"  onmouseout="fuera()" onmouseover="imgcambio(Modificar)" onclick="acciones(Modificar)" class="boton"></center></li>
                 <li class="option opc"><center><input type="button" value="Cuestionario" name="cuestionario" id="cuestionario"  onmouseout="fuera()" onmouseover="imgcambio(cuestionario)" onclick="acciones(cuestionario)" class="boton"></center></li>    
+                <li class="option opc"><center><input type="button" value="Estadísticas" name="estadisticas" id="estadisticas"  onmouseout="fuera()" onmouseover="imgcambio(estadisticas)" onclick="acciones(estadisticas)" class="boton"></center></li>    
                 <li class="option opc"><center><input type="button" value="Cerrar Sesión" name="Cerrar" id="Cerrar" onmouseover="imgcambio(Cerrar)" onmouseout="fuera()" onclick="acciones(Cerrar)" class="boton"></center></li>
             </ul>
             <script>
                 var hola = localStorage.getItem("tipo");
                 if(hola === "1"){
                     document.getElementById('cuestionario').style.display = "none";
+                    document.getElementById('estadisticas').style.display = "none";
                 }
             </script>
         </div>
