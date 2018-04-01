@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <title> Ayuda Usuario </title>
         
-        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <link rel="icon" type="image/x-icon" href="/MexicoInTempore/icon.ico" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -29,6 +29,11 @@ and open the template in the editor.
             function aumenta(){
                 contador++;
                 console.log(contador);
+            }
+            function fondo(){
+                var Colores = ["#EC7063","#5DADE2","#45B39D","#E59866","#45B39D","#F5B7B1","#85C1E9","#FCF3CF","#85929E","#AF7AC5"];
+                var Col = Math.floor(Math.random() * 8);
+                document.body.style.backgroundColor = Colores[Col];
             }
         </script>
     </head>
@@ -56,7 +61,7 @@ and open the template in the editor.
                         </ul>
                     </li>
                     <li>
-                        <a onclick="location.href='/MexicoInTempore/paginaPrin/Seleccion.html'"><span class="Color2"><i class ="icon icon-address-booked"></i></span>Volver al Menú</a>
+                        <a onclick="location.href='/MexicoInTempore/paginaPrin/Paginas/Seleccion.html'"><span class="Color2"><i class ="icon icon-address-booked"></i></span>Volver al Menú</a>
                     </li>
                 </ul>
             </nav>

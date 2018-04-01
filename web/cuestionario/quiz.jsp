@@ -10,6 +10,7 @@
     <head style='height: 100%; width: 100%; margin: 0px'>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Cuestionario </title>
+        <link rel="icon" type="image/x-icon" href="/MexicoInTempore/icon.ico" />
         <link href="cssCuesti/sQuiz.css" rel="stylesheet" type="text/css"/>
         
         <script>

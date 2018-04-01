@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Modificar</title>
-        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <link rel="icon" type="image/x-icon" href="/MexicoInTempore/icon.ico" />
         
         <style>
             input[type="submit"]{
@@ -34,7 +34,7 @@
         </script>
     </head>
     <body style="width: 100%; height: 100%; margin: 0px">
-        <img src="imgCuesti/modificar.jpeg" style="width: 100%; height: 100%; margin: 0px; position: absolute; top: 0px; left: 0px; z-index: -1">
+       
         <form name="formu" action="cSecurity.jsp" method="post" style="text-align: center">
             <h1 id="titulo"></h1>
             <h2 id="numero"></h2>

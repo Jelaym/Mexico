@@ -12,7 +12,7 @@
         <title>Registrar una pregunta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <link rel="icon" type="image/x-icon" href="/MexicoInTempore/icon.ico" />
         
         <style>
             label.sLab{
@@ -76,7 +76,6 @@
     </head>
     <body style="width: 100%; height: 95%; margin: 0px;">
         <%@page import="java.io.*,java.sql.*"%>
-        <img src="imgCuesti/patron.jpeg" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; z-index: 0">
         
         <form name="formu" method="post" action="regiP.jsp">
             <div id="epocas" style="color: #37C8D2; background-color: transparent;">

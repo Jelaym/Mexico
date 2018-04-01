@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Modificar </title>
-        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <link rel="icon" type="image/x-icon" href="/MexicoInTempore/icon.ico" />
         
         <style>
             h1{
@@ -21,7 +21,7 @@
             select{
                 width: 24%;
                 font-size: 1.5em;
-                background-color: deepskyblue;
+                background-color: #3498DB;
                 color: white;
             }
             input{
@@ -79,7 +79,6 @@
         </script>
     </head>
     <body style="height: 100%; width: 100%; margin: 0px">
-        <img src="imgCuesti/patron.jpeg" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; z-index: -1">
         <form method="post" action="traerPre.jsp" style="text-align: center; position: relative; z-index: 1; line-height: 200px">
             <h1> Buscar Pregunta </h1>
             <div style="line-height: 40px">

@@ -119,7 +119,7 @@
                                     security.cSecurityBD regi= new security.cSecurityBD();
                                     if(regi.verifyP("verifyC", pase, rfc, nombre, apellidop, apellidom, nombreu, correo, contra, semestre, agrupar)){
                                         out.println("<script>alert('Registro dado de alta exitosamente!.')</script>");
-                                        out.println("<script> location.replace('/MexicoInTempore/paginaPrin/Inicio.html'); </script>");
+                                        out.println("<script> location.replace('/MexicoInTempore/paginaPrin/Paginas/Inicio.html'); </script>");
                                     }else{
                                         out.println("<script>alert('El registro fallo. Por favor, Vuelvalo a Intentar.')</script>");
                                         out.println("<script> history.back(1); </script>");
@@ -138,7 +138,7 @@
                                 security.cSecurityBD regi= new security.cSecurityBD();
                                 if(regi.verifyA("verifyA", rfc, nombre, apellidop, apellidom, nombreu, correo, contra, semestre, grupo)){
                                     out.println("<script>alert('Registro dado de alta exitosamente!.')</script>");
-                                    out.println("<script> location.replace('/MexicoInTempore/paginaPrin/Inicio.html'); </script>");
+                                    out.println("<script> location.replace('/MexicoInTempore/paginaPrin/Paginas/Inicio.html'); </script>");
                                 }else{
                                     out.println("<script>alert('El registro fallo. Por favor, Vuelvalo a Intentar.')</script>");
                                     out.println("<script> history.back(1); </script>");

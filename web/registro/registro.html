@@ -9,7 +9,8 @@ and open the template in the editor.
         <title>Tipo de Usuario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <link rel="icon" type="image/x-icon" href="/MexicoInTempore/icon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
         <link rel="stylesheet" href="css/res.css">
         
         <script>
@@ -36,17 +37,17 @@ and open the template in the editor.
     <body style="background-color: #C7C7C3; height: 100%; width: 100%; margin: 0px; font-family: serif" onload="mostrar()">
         <img src="user.jpeg" id="image" style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; visibility: hidden">
         <form name="Formu" id="Formu" style="display: block; visibility: hidden">
-            <h1 id="titulo">¿Qué tipo de usuario eres?</h1>
+            <h1 id="titulo" style="font-family: 'Carrois Gothic SC', sans-serif;">¿Qué tipo de usuario eres?</h1>
             
-            <div class="giroDiv" style="display:block;; position: absolute; left: 25%; top: 35%">
+            <div class="giroDiv" style="display:block;; position: absolute; left: 29%; top: 35%">
                 <input type="button" id="Alumno" name="Alumno" onclick="location.replace('Ccuenta.html?t='+this.name);">
             </div>
-            <label style="display:block; position: absolute; left: 27.5%; top: 45%" for="Alumno"> Alumno </label>
+            <label style="display:block; position: absolute; left: 31%; top: 45%; font-family: 'IBM Plex Sans Condensed', sans-serif;" for="Alumno"> Alumno </label>
             
-            <div class="giroDiv" style="display:block; position: absolute; left: 55%; top: 35%;">
+            <div class="giroDiv" style="display:block; position: absolute; left: 59%; top: 35%;">
                 <input type="button" id="Maestro" name="Maestro" onclick="location.replace('Ccuenta.html?t='+this.name);">
             </div>
-            <label style="display:block; position: absolute; left: 57.5%; top: 45%;" for="Maestro"> Maestro </label>
+            <label style="display:block; position: absolute; left: 61%; top: 45%; font-family: 'IBM Plex Sans Condensed', sans-serif;" for="Maestro"> Maestro </label>
         </form>
     </body>
 </html>

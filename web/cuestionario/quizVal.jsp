@@ -42,33 +42,33 @@
                     
                     if(epo.equals("1")){
                         if(estado.equals("Logrado")){
-                            out.println("<script> alert('Bien has pasado la segunda Epoca!!'); "
+                            out.println("<script> alert('Bien has pasado la segunda Epoca!!. Aciertos:" + score[0] + ".'); "
                                     + "location.href='/MexicoInTempore/Mapa/Mapa2.html'; "
                                     + "</script>");
                         }else{
-                            out.println("<script> alert('No has alcanzado los puntos necesarios'); "
+                            out.println("<script> alert('No has alcanzado los puntos necesarios. Aciertos:" + score[0] + ".'); "
                                     + "location.href='/MexicoInTempore/Mapa/Mapa.html'; "
                                     + "</script>");
                         }
                     }else{
                         if(epo.equals("2")){
                             if(estado.equals("Logrado")){
-                                out.println("<script> alert('Bien has pasado a la tercera Epoca!!'); "
+                                out.println("<script> alert('Bien has pasado a la tercera Epoca!!. Aciertos:" + score[0] + ".'); "
                                         + "location.href='/MexicoInTempore/Mapa/Mapa3.html'; "
                                         + "</script>");
                             }else{
-                                out.println("<script> alert('No has alcanzado los puntos necesarios'); "
+                                out.println("<script> alert('No has alcanzado los puntos necesarios. Aciertos: " + score[0] + ".'); "
                                         + "location.href='/MexicoInTempore/Mapa/Mapa2.html'; "
                                         + "</script>");
                             }
                         }else{
                             if(epo.equals("3")){
                                 if(estado.equals("Logrado")){
-                                    out.println("<script> alert('Bien has completado los cuestionarios exitosamente! :D'); "
+                                    out.println("<script> alert('Bien has completado los cuestionarios exitosamente! :D \nAciertos: " + score[0] + ".'); "
                                             + "location.href='/MexicoInTempore/paginaPrin/Seleccion.html'; "
                                             + "</script>");
                                 }else{
-                                    out.println("<script> alert('No has alcanzado los puntos necesarios'); "
+                                    out.println("<script> alert('No has alcanzado los puntos necesarios \nAciertos: " + score[0] + ".'); "
                                             + "location.href='/MexicoInTempore/Mapa/Mapa3.html'; "
                                             + "</script>");
                                 }

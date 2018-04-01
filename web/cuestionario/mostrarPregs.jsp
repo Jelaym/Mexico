@@ -17,6 +17,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Mostrar Preguntas</title>
+        <link rel="icon" type="image/x-icon" href="/MexicoInTempore/icon.ico" />
         
         <style>
             #nombreEpo{

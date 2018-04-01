@@ -40,8 +40,8 @@
             String usuar= (sesion.getAttribute("usuario") != null)? sesion.getAttribute("usuario").toString(): null;
 
             if(usuar != null){
-                usuario.cUsuario user= new usuario.cUsuario();
-                int epoca= Integer.parseInt(user.getInfoUsuario(Integer.parseInt(usuar)));
+                usuario.cExists user= new usuario.cExists();
+                int epoca= Integer.parseInt(user.getInfoUsuario(usuar, "getInfoUsser"));
 
                 if(epoca < 3){
                    epoca++;
@@ -60,10 +60,10 @@
                 }
                 out.println(epoca);
             }else{
-                response.sendRedirect("/MexicoInTempore/paginaPrin/Inicio.html");
+                response.sendRedirect("/MexicoInTempore/paginaPrin/Paginas/Inicio.html");
             }
         }else{
-            response.sendRedirect("/MexicoInTempore/paginaPrin/Inicio.html");
+            response.sendRedirect("/MexicoInTempore/paginaPrin/Paginas/Inicio.html");
         }
     }
 %>
